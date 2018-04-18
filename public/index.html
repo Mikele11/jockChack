@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Chack</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+	<script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+    <!-- Optional theme -->
+	<link href="style/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"> 
+</head>
+<body>
+	<div class="header">
+		<div class="headerLeft">
+			<h4>Шутки о Чак Норрисе</h4>
+		</div>
+		<div class="headerRight">
+			<div id="jockTools">
+				Количество шуток
+				<input type="number" placeholder="число шуток <=10" id="count" min="1" max="10" ng-model="count"/> Категория шуток
+				<select ng-model="category">
+					<option value="1">Все шутки</option>
+					<option value="2">Про силу Чака</option>
+					<option value="3">О политике</option>
+					<option value="4">О жизни</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="mainContent" ng-controller="AppCtrl">	
+		<div class="table">
+			<div id="enterData">
+				<div><input class="form-control" placeholder="jock" ng-model="contact.jock"></div>
+				<div><input class="form-control" placeholder="category" ng-model="contact.category"></div>
+				<div id="bat">
+					<div><button class="btn btn-primary" ng-click="addContact()">Добавить</button></div>
+					<div><button class="btn btn-info" ng-click="deselect()">Очистить поле ввода</button></div>
+				</div>
+			</div>
+			<div class="updateData"><button class="btn btn-primary" ng-click="refreshJock()">Оновить шутки</button></div>
+			<div class='rept' ng-repeat="contact in filteredTodos">
+				<div>{{contact.jock}}</div>
+			</div>
+		</div>
+	</div>
+	
+<script src="controllers/controller.js"></script>
+</body>
+</html>

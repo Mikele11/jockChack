@@ -1,0 +1,17 @@
+{
+  "name": "Chack",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Ilyash Mychailo"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
